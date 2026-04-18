@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# .stack
 
-## Getting Started
+**The AI operating system that replaces your company's entire SaaS stack.**
 
-First, run the development server:
+One invoice. One dashboard. One AI agent. 10% cheaper from day one, 50% within a year.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Live: [dotstack-five.vercel.app](https://dotstack-five.vercel.app)
+
+---
+
+## What is this
+
+This repo contains two things:
+
+### 1. The Pitch (`/`)
+A 14-slide horizontally-scrolling interactive pitch for the Pinecone Ventures Buildathon (AI Infrastructure track, June 2026, Visby).
+
+- Interactive financial model with 6 sliders (customers, spend, Stackie params, marketing)
+- P&L and Cashflow toggle with live chart
+- Company valuation at 8x ARR
+- 42-app App Store showcase with category filtering
+- AI agent that answers investor questions (powered by Claude Sonnet 4.6)
+- Embedded live product preview
+- 12-month launch plan with expandable quarters
+- Competitor analysis built into AI agent knowledge
+
+### 2. The Product (`/app`)
+A working MVP of .stack with three demo Spaces (Brand Factory, Svenska Spel, Stellar Internal).
+
+**Modules:**
+- Dashboard with AI-streamed briefings
+- CRM (contacts, deals pipeline, companies, interaction history)
+- Conversations (unified inbox across email/Slack/meetings)
+- Chat (real-time channels per space)
+- Projects (Kanban board + Progress view with time tracking)
+- Timeline (Gantt chart with phases, milestones, today-line)
+- Calendar (week view with events)
+- Campaigns (Meta/Google/TikTok with metrics)
+- Finance (invoices, time tracking, project economics with hourly rates)
+- Reports, Creative, Files
+- App Store (42 apps across 12 categories)
+- Today view (AI-curated daily priorities)
+- Inbox (cross-space unified view)
+
+---
+
+## Tech stack
+
+- **Framework**: Next.js 16 (App Router, TypeScript, Turbopack)
+- **Styling**: Tailwind CSS + CSS custom properties
+- **Animation**: Framer Motion
+- **Charts**: Recharts
+- **AI**: Anthropic Claude Sonnet 4.6 via direct API (SSE streaming)
+- **Icons**: Lucide React
+- **Fonts**: Inter Tight, Instrument Serif, JetBrains Mono
+- **Deployment**: Vercel
+
+## The business model
+
+.stack takes over a company's entire SaaS stack:
+1. We pay the vendors directly
+2. Customer gets one invoice at 10% discount, net-60 terms (1.8% factoring fee)
+3. A dedicated Stackie (1 per 10 customers) actively cancels ~20% of subscriptions per month
+4. We replace vendor tools with AI-built .stack modules
+5. Vendor cost drops to ~15% floor (API tokens + essential backends)
+6. Target: 50% total cost reduction within 12 months
+
+## Environment variables
+
+```
+ANTHROPIC_API_KEY=your-key-here
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Founder
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Anton Larsson
+Head of Performance, Stellar
+anton.larsson@wearestellar.se
+[LinkedIn](https://www.linkedin.com/in/anton-larsson-23aa574a/)

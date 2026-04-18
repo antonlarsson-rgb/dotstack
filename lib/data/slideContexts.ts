@@ -1,0 +1,16 @@
+export const slideContexts: Record<number, string> = {
+  1: "Hero. .stack: AI operating system replacing SMBs' entire SaaS stack. 10% cheaper day one, 50% within a year. Buildathon AI Infrastructure track.",
+  2: "Problem. 87 SaaS tools at average SMB, 34% unused. Companies afraid to cancel: might lose features, might lose data. Nobody manages subscriptions. AI feels like another layer. Interactive slider shows cost by company size.",
+  3: "Why now. Per-seat SaaS ending: 285B wiped Feb 2026. AI builds software faster than humans buy SaaS. MCP solves integration. CFOs seeking alternatives.",
+  4: "How it works. .stack pays all SaaS vendors, one invoice at 10% discount (customer pays 90%). Net-60 first invoice (1.8% factoring). Stackie (1 per 10 customers) actively cancels ~20% of subscriptions/month. Target: 50% cost reduction in 12 months. Vendor cost floor ~15% (API tokens, essential backends).",
+  5: "Founder. Anton Larsson, Head of Performance at Stellar. 12 years building companies. B2B acquisition, marketing, sales, operations. Construction staffing reached 23M SEK, bankrupt 2022. Built .stack MVP with AI.",
+  6: "Architecture. 4-layer: interface, AI agent + search, micro-apps (replaces SaaS), deterministic backends. 42 apps in App Store.",
+  7: "App Store. 42 apps in 12 categories, each replacing specific SaaS products.",
+  8: "Company economics. Interactive model. Revenue = 90% of customer's original SaaS spend. Vendor cost drops ~20%/month (floor 15%). Factoring 1.8% on net-60. Fixed: 2 founders x 45k + Stackies x 35k + 15k office + 8k infra + 20k marketing. Shows MRR, ARR, EBITDA, valuation 8x ARR, cashflow with 1M starting capital.",
+  9: "Traction. Working MVP with 42-app store. 2 test customers (Stellar ~100k SEK/mo + retail brand 150+ stores). 15 warm leads. Built with AI. Stackie model: everything else is AI, the human holds the customer's hand.",
+  10: "12-month roadmap. M1-3: onboard 2 customers, cancel first subscriptions, hire co-founder, positive gross margin month 3. M4-6: 3-5 new customers, 400-600k MRR, first Stackie active. M7-9: 8-12 customers, 700k-1M MRR, second Stackie. M10-12: 12-15 customers, 1M+ MRR, ARR 12-15M SEK, Series A ready.",
+  11: "Ask the AI. Prominent agent with suggested questions about economics, architecture, competition, investment case.",
+  12: "The ask. 1M SEK + 12 months support. Budget: 270k co-founder, 210k Stackie, 200k customer SaaS float, 120k infra, 100k marketing, 100k buffer. Month 12: 12-15 customers, 1M+ MRR, 70%+ gross margin on mature customers, ARR 12-15M SEK.",
+  13: "Live product. Working MVP: CRM, projects, chat, finance, campaigns, timeline, AI agent, 42-app store.",
+  14: "Contact. anton@dotstack.com, LinkedIn.",
+};

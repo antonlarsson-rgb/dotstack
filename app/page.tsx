@@ -1,65 +1,81 @@
-import Image from "next/image";
+"use client";
+
+import { useCallback } from "react";
+import { SlideProvider, useSlideContext } from "@/lib/context/SlideContext";
+import { useHorizontalScroll } from "@/lib/hooks/useHorizontalScroll";
+import { TopBar } from "@/components/ui/TopBar";
+import { NavBar } from "@/components/ui/NavBar";
+import { AgentDrawer, AgentButton } from "@/components/ui/AgentDrawer";
+
+import { Slide01Hero } from "@/components/slides/Slide01Hero";
+import { Slide02Observation } from "@/components/slides/Slide02Observation";
+import { Slide03WhyNow } from "@/components/slides/Slide03WhyNow";
+import { Slide04Solution } from "@/components/slides/Slide04Solution";
+import { Slide14Founder } from "@/components/slides/Slide14Founder";
+import { Slide10Architecture } from "@/components/slides/Slide10Architecture";
+import { Slide06AppStore } from "@/components/slides/Slide06AppStore";
+import { Slide08CompanyFinancials } from "@/components/slides/Slide08CompanyFinancials";
+import { Slide13Traction } from "@/components/slides/Slide13Traction";
+import { Slide10Roadmap } from "@/components/slides/Slide10Roadmap";
+import { Slide12AskAgent } from "@/components/slides/Slide12AskAgent";
+import { Slide16Ask } from "@/components/slides/Slide16Ask";
+import { Slide05LiveProduct } from "@/components/slides/Slide05LiveProduct";
+import { Slide17Contact } from "@/components/slides/Slide17Contact";
+
+function PitchDeck() {
+  const { setCurrentSlide } = useSlideContext();
+
+  const handleSlideChange = useCallback(
+    (slide: number) => setCurrentSlide(slide),
+    [setCurrentSlide]
+  );
+
+  const { containerRef, scrollToSlide } = useHorizontalScroll(handleSlideChange);
+
+  return (
+    <>
+      <TopBar />
+      <NavBar onNavigate={scrollToSlide} />
+      <AgentButton />
+      <AgentDrawer />
+      <div ref={containerRef} className="scroll-container">
+        {/* 1. What is .stack */}
+        <Slide01Hero />
+        {/* 2. The problem: SaaS sprawl, unused licenses, fear of cancelling */}
+        <Slide02Observation />
+        {/* 3. Why the timing is right */}
+        <Slide03WhyNow />
+        {/* 4. How .stack works: Stackie model, no fear of missing features */}
+        <Slide04Solution />
+        {/* 5. Who is behind this */}
+        <Slide14Founder />
+        {/* 6. Technical architecture */}
+        <Slide10Architecture />
+        {/* 7. The App Store: 42 apps */}
+        <Slide06AppStore />
+        {/* 8. Company economics (interactive) */}
+        <Slide08CompanyFinancials />
+        {/* 9. What we have today */}
+        <Slide13Traction />
+        {/* 10. 12-month plan */}
+        <Slide10Roadmap />
+        {/* 11. Ask the AI anything */}
+        <Slide12AskAgent />
+        {/* 12. The investment ask */}
+        <Slide16Ask />
+        {/* 13. The live product */}
+        <Slide05LiveProduct />
+        {/* 14. Contact */}
+        <Slide17Contact />
+      </div>
+    </>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <SlideProvider>
+      <PitchDeck />
+    </SlideProvider>
   );
 }
