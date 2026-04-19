@@ -32,7 +32,7 @@ export function Slide10Architecture() {
         </motion.div>
 
         <motion.h1
-          className="font-sans text-[40px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.1]"
+          className="font-sans text-[26px] md:text-[40px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.1]"
           variants={fadeUp}
         >
           A new layer between the user and their software.

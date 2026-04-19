@@ -34,7 +34,7 @@ export function Slide13Traction() {
         </motion.div>
 
         <motion.h1
-          className="font-sans text-[40px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.1]"
+          className="font-sans text-[26px] md:text-[40px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.1]"
           variants={fadeUp}
         >
           Not a slide deck. A working product with customers.

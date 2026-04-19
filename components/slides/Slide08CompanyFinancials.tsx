@@ -147,7 +147,7 @@ export function Slide08CompanyFinancials() {
         </motion.div>
 
         <motion.h1
-          className="font-sans text-[32px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.1]"
+          className="font-sans text-[24px] md:text-[32px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.15]"
           variants={fadeUp}
         >
           Drag the sliders. See what .stack becomes.
@@ -160,7 +160,7 @@ export function Slide08CompanyFinancials() {
         </motion.p>
 
         {/* Sliders */}
-        <motion.div className="mt-4 grid grid-cols-3 gap-x-5 gap-y-2.5" variants={fadeUp}>
+        <motion.div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-x-4 md:gap-x-5 gap-y-2.5" variants={fadeUp}>
           <div>
             <label className="text-[11px] text-[var(--text-tertiary)] block mb-1">Customers at month {months}</label>
             <input type="range" min={2} max={50} value={customers} onChange={(e) => setCustomers(Number(e.target.value))} className="w-full accent-[var(--accent)]" />
@@ -257,7 +257,7 @@ export function Slide08CompanyFinancials() {
         </motion.div>
 
         {/* Key numbers */}
-        <motion.div className="mt-2.5 grid grid-cols-4 gap-2" variants={fadeUp}>
+        <motion.div className="mt-2.5 grid grid-cols-2 md:grid-cols-4 gap-2" variants={fadeUp}>
           <div className="border border-[var(--border)] rounded-lg p-2">
             <span className="text-[10px] text-[var(--text-tertiary)] block">MRR (month {months})</span>
             <span className="font-mono text-[16px] font-medium tabular-nums text-[var(--accent-blue)]">
@@ -282,7 +282,7 @@ export function Slide08CompanyFinancials() {
             </span>
           </div>
         </motion.div>
-        <motion.div className="mt-2 grid grid-cols-4 gap-2" variants={fadeUp}>
+        <motion.div className="mt-2 grid grid-cols-2 md:grid-cols-4 gap-2" variants={fadeUp}>
           <div className="border border-[var(--border)] rounded-lg p-2">
             <span className="text-[10px] text-[var(--text-tertiary)] block">Monthly EBITDA</span>
             <span className={`font-mono text-[16px] font-medium tabular-nums ${last.ebitda >= 0 ? "text-[var(--accent-green)]" : "text-[var(--accent-red)]"}`}>

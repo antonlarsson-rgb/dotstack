@@ -37,8 +37,8 @@ export function Slide14Founder() {
         </motion.div>
 
         {/* Photo + intro */}
-        <motion.div className="flex gap-8 items-start mb-10" variants={fadeUp}>
-          <div className="w-[140px] h-[140px] rounded-2xl overflow-hidden flex-shrink-0 border border-[var(--border)]">
+        <motion.div className="flex flex-col sm:flex-row gap-5 sm:gap-8 items-center sm:items-start mb-8 md:mb-10" variants={fadeUp}>
+          <div className="w-[100px] h-[100px] md:w-[140px] md:h-[140px] rounded-2xl overflow-hidden flex-shrink-0 border border-[var(--border)]">
             <Image
               src="/anton.jpg"
               alt="Anton Larsson"
@@ -49,7 +49,7 @@ export function Slide14Founder() {
             />
           </div>
           <div className="min-w-0">
-            <h1 className="font-sans text-[32px] font-medium tracking-[-0.02em] text-[var(--text)] leading-[1.15]">
+            <h1 className="font-sans text-[24px] md:text-[32px] font-medium tracking-[-0.02em] text-[var(--text)] leading-[1.15] text-center sm:text-left">
               Anton Larsson
             </h1>
             <p className="text-[15px] text-[var(--text-tertiary)] mt-1">
@@ -67,7 +67,7 @@ export function Slide14Founder() {
         </motion.div>
 
         {/* Timeline */}
-        <motion.div className="grid grid-cols-2 gap-x-8 gap-y-0" variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.05 } } }}>
+        <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0" variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.05 } } }}>
           <div className="space-y-0">
             {timeline.slice(0, 3).map((t, i) => (
               <motion.div
@@ -109,7 +109,7 @@ export function Slide14Founder() {
         </motion.div>
 
         {/* Strengths / gaps */}
-        <motion.div className="grid grid-cols-2 gap-4 mt-6" variants={fadeUp}>
+        <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6" variants={fadeUp}>
           <div className="border border-[var(--border)] rounded-lg p-4">
             <h3 className="text-[12px] font-medium text-[var(--accent-green)] mb-2">What I bring</h3>
             <ul className="space-y-1 text-[13px] text-[var(--text-secondary)] leading-[1.4]">

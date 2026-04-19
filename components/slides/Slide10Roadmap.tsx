@@ -133,7 +133,7 @@ export function Slide10Roadmap() {
         </motion.div>
 
         <motion.h1
-          className="font-sans text-[36px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.1] mb-8"
+          className="font-sans text-[26px] md:text-[36px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.15] mb-6 md:mb-8"
           variants={fadeUp}
         >
           12 months from investment to Series A.
@@ -180,7 +180,7 @@ export function Slide10Roadmap() {
                       transition={{ duration: 0.3, ease }}
                       className="overflow-hidden"
                     >
-                      <div className="px-4 pb-4 grid grid-cols-3 gap-5 border-t border-[var(--border)] pt-3">
+                      <div className="px-4 pb-4 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 border-t border-[var(--border)] pt-3">
                         {q.months.map((m) => (
                           <div key={m.month}>
                             <span className="text-[12px] font-medium text-[var(--text)] block mb-1.5">{m.month}</span>

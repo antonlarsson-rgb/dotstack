@@ -32,7 +32,7 @@ export function Slide06AppStore() {
 
         <motion.div className="flex items-end justify-between mb-6" variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } } }}>
           <div>
-            <h1 className="font-sans text-[40px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.1]">
+            <h1 className="font-sans text-[26px] md:text-[40px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.15]">
               42 apps. Each one replaces a SaaS product.
             </h1>
             <p className="text-[17px] text-[var(--text-secondary)] mt-2">
@@ -67,7 +67,7 @@ export function Slide06AppStore() {
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-4 gap-2.5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
           <AnimatePresence mode="popLayout">
             {filtered.map((app) => {
               const installed = installedIds.has(app.id);

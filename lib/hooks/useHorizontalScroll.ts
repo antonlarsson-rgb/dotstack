@@ -2,6 +2,10 @@
 
 import { useEffect, useRef, useCallback } from "react";
 
+function isMobile() {
+  return typeof window !== "undefined" && window.innerWidth < 768;
+}
+
 export function useHorizontalScroll(onSlideChange: (slide: number) => void) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -9,11 +13,21 @@ export function useHorizontalScroll(onSlideChange: (slide: number) => void) {
     (n: number, smooth = true) => {
       const el = containerRef.current;
       if (!el) return;
-      const clamped = Math.max(1, Math.min(n, 17));
-      el.scrollTo({
-        left: (clamped - 1) * window.innerWidth,
-        behavior: smooth ? "smooth" : "auto",
-      });
+      const clamped = Math.max(1, Math.min(n, 14));
+
+      if (isMobile()) {
+        // Vertical scroll on mobile: find the nth .slide child
+        const slides = el.querySelectorAll(".slide");
+        const target = slides[clamped - 1];
+        if (target) {
+          target.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+        }
+      } else {
+        el.scrollTo({
+          left: (clamped - 1) * window.innerWidth,
+          behavior: smooth ? "smooth" : "auto",
+        });
+      }
     },
     []
   );
@@ -28,7 +42,19 @@ export function useHorizontalScroll(onSlideChange: (slide: number) => void) {
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(() => {
-        const slide = Math.round(el.scrollLeft / window.innerWidth) + 1;
+        let slide: number;
+        if (isMobile()) {
+          // Vertical: figure out which slide is most visible
+          const slides = el.querySelectorAll(".slide");
+          const scrollTop = el.scrollTop;
+          slide = 1;
+          slides.forEach((s, i) => {
+            const rect = (s as HTMLElement).offsetTop;
+            if (scrollTop >= rect - 200) slide = i + 1;
+          });
+        } else {
+          slide = Math.round(el.scrollLeft / window.innerWidth) + 1;
+        }
         onSlideChange(slide);
         history.replaceState(null, "", `#slide-${slide}`);
         ticking = false;
@@ -49,9 +75,10 @@ export function useHorizontalScroll(onSlideChange: (slide: number) => void) {
     }
   }, [scrollToSlide]);
 
-  // Keyboard navigation
+  // Keyboard navigation (desktop only)
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
+      if (isMobile()) return;
       if (
         e.target instanceof HTMLInputElement ||
         e.target instanceof HTMLTextAreaElement

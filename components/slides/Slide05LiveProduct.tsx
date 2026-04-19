@@ -30,12 +30,11 @@ export function Slide05LiveProduct() {
           </p>
         </motion.div>
 
-        {/* Browser chrome with scaled iframe */}
+        {/* Browser chrome with scaled iframe — hidden on mobile */}
         <motion.div
-          className="w-full border border-[var(--border)] rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.08)]"
+          className="hidden md:block w-full border border-[var(--border)] rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.08)]"
           variants={fadeUp}
         >
-          {/* Title bar */}
           <div className="bg-[var(--bg-muted)] border-b border-[var(--border)] px-4 py-2.5 flex items-center gap-3">
             <div className="flex gap-1.5">
               <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
@@ -48,25 +47,28 @@ export function Slide05LiveProduct() {
               </div>
             </div>
           </div>
-
-          {/* Scaled iframe container */}
           <div className="relative bg-white overflow-hidden" style={{ height: "420px" }}>
             <div
               className="absolute top-0 left-0 origin-top-left pointer-events-none"
-              style={{
-                width: "1440px",
-                height: "900px",
-                transform: "scale(0.625)",
-              }}
+              style={{ width: "1440px", height: "900px", transform: "scale(0.625)" }}
             >
-              <iframe
-                src="/app/brand-factory"
-                className="w-full h-full border-0"
-                title=".stack product preview"
-                loading="lazy"
-              />
+              <iframe src="/app/brand-factory" className="w-full h-full border-0" title=".stack product preview" loading="lazy" />
             </div>
           </div>
+        </motion.div>
+
+        {/* Mobile: simple card instead of iframe */}
+        <motion.div
+          className="md:hidden w-full border border-[var(--border)] rounded-xl p-6 bg-[var(--bg-subtle)] text-center"
+          variants={fadeUp}
+        >
+          <div className="font-mono text-[24px] font-medium text-[var(--text)] mb-3">.stack</div>
+          <p className="text-[13px] text-[var(--text-tertiary)] mb-4">
+            CRM · Projects · Chat · Finance · Campaigns · Timeline · AI Agent · 42-app Store
+          </p>
+          <p className="text-[12px] text-[var(--text-muted)]">
+            Best experienced on desktop. Tap below to open.
+          </p>
         </motion.div>
 
         <motion.div className="flex items-center gap-4 mt-5" variants={fadeUp}>

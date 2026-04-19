@@ -40,7 +40,7 @@ export function Slide03WhyNow() {
         </motion.div>
 
         <motion.h1
-          className="font-sans text-[40px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.1]"
+          className="font-sans text-[26px] md:text-[40px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.15]"
           variants={fadeUp}
         >
           Per-seat SaaS is ending.
@@ -58,7 +58,7 @@ export function Slide03WhyNow() {
         </motion.p>
 
         <motion.div
-          className="mt-10 grid grid-cols-3 gap-6"
+          className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6"
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
         >
           {reasons.map((r) => (

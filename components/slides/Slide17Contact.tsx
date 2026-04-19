@@ -32,7 +32,7 @@ export function Slide17Contact() {
         variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
       >
         <motion.h1
-          className="font-mono text-[56px] font-medium tracking-[-0.025em] text-[var(--text)]"
+          className="font-mono text-[36px] md:text-[56px] font-medium tracking-[-0.025em] text-[var(--text)]"
           variants={fadeUp}
         >
           .stack

@@ -35,7 +35,7 @@ export function Slide16Ask() {
         </motion.div>
 
         <motion.h1
-          className="font-sans text-[40px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.1]"
+          className="font-sans text-[26px] md:text-[40px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.1]"
           variants={fadeUp}
         >
           1 MSEK to go from prototype to company.
@@ -49,7 +49,7 @@ export function Slide16Ask() {
           clear. This is what the investment goes toward.
         </motion.p>
 
-        <motion.div className="mt-8 grid grid-cols-2 gap-8" variants={fadeUp}>
+        <motion.div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8" variants={fadeUp}>
           {/* Budget chart */}
           <div>
             <h3 className="text-[14px] font-medium text-[var(--text)] mb-4">How the 1M SEK is allocated</h3>

@@ -11,7 +11,7 @@ export function NavBar({ onNavigate }: NavBarProps) {
   const { currentSlide, totalSlides } = useSlideContext();
 
   return (
-    <div className="fixed bottom-0 left-0 z-50 flex items-center gap-3 px-8 py-5">
+    <div className="hidden md:flex fixed bottom-0 left-0 z-50 items-center gap-3 px-8 py-5">
       <button
         onClick={() => onNavigate(currentSlide - 1)}
         disabled={currentSlide <= 1}

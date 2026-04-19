@@ -39,7 +39,7 @@ export function Slide12AskAgent() {
         </motion.div>
 
         <motion.h1
-          className="font-sans text-[40px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.1]"
+          className="font-sans text-[28px] md:text-[40px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.15]"
           variants={fadeUp}
         >
           Don&apos;t take my word for it.
@@ -58,7 +58,7 @@ export function Slide12AskAgent() {
 
         {/* Prompt cards */}
         <motion.div
-          className="mt-10 grid grid-cols-3 gap-3 w-full"
+          className="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 w-full"
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.06 } } }}
         >
           {prompts.map((p) => (

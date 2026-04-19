@@ -112,7 +112,7 @@ export function AgentDrawer() {
   if (!agentOpen) return null;
 
   return (
-    <div className="fixed inset-y-0 right-0 w-[420px] bg-white border-l border-[var(--border)] z-[60] flex flex-col shadow-[-4px_0_24px_rgba(0,0,0,0.04)]">
+    <div className="fixed inset-0 md:inset-y-0 md:left-auto md:right-0 w-full md:w-[420px] bg-white border-l border-[var(--border)] z-[60] flex flex-col shadow-[-4px_0_24px_rgba(0,0,0,0.04)]">
       {/* Header */}
       <div className="flex items-center justify-between px-5 py-4 border-b border-[var(--border)]">
         <div>
@@ -228,7 +228,7 @@ export function AgentButton() {
   return (
     <button
       onClick={() => setAgentOpen(true)}
-      className="fixed bottom-5 right-8 z-50 w-12 h-12 rounded-full bg-[var(--accent)] text-white flex items-center justify-center font-mono text-[13px] font-medium shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:opacity-90 transition-opacity duration-[180ms]"
+      className="fixed bottom-4 right-4 md:bottom-5 md:right-8 z-50 w-11 h-11 md:w-12 md:h-12 rounded-full bg-[var(--accent)] text-white flex items-center justify-center font-mono text-[12px] md:text-[13px] font-medium shadow-[0_2px_8px_rgba(0,0,0,0.12)] hover:opacity-90 transition-opacity duration-[180ms]"
       aria-label="Open .stack assistant"
     >
       .s

@@ -55,7 +55,7 @@ export function Slide04Solution() {
         </motion.div>
 
         <motion.h1
-          className="font-sans text-[40px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.1] mb-3"
+          className="font-sans text-[26px] md:text-[40px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.15] mb-3"
           variants={fadeUp}
         >
           The model
@@ -71,7 +71,7 @@ export function Slide04Solution() {
         </motion.p>
 
         <motion.div
-          className="grid grid-cols-2 gap-3"
+          className="grid grid-cols-1 md:grid-cols-2 gap-3"
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.06 } } }}
         >
           {pillars.map((p) => {

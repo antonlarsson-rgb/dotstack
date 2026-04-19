@@ -55,7 +55,7 @@ export function Slide02Observation() {
         </motion.div>
 
         <motion.h1
-          className="font-sans text-[40px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.1]"
+          className="font-sans text-[26px] md:text-[40px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.15]"
           variants={fadeUp}
         >
           Companies pay for 87 tools.
@@ -65,7 +65,7 @@ export function Slide02Observation() {
 
         {/* Stats */}
         <motion.div
-          className="mt-8 grid grid-cols-3 divide-x divide-[var(--border)]"
+          className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 sm:divide-x divide-[var(--border)]"
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
         >
           {stats.map((s) => (
@@ -79,7 +79,7 @@ export function Slide02Observation() {
 
         {/* Fear grid */}
         <motion.div
-          className="mt-8 grid grid-cols-2 gap-3"
+          className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3"
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.06 } } }}
         >
           {fears.map((f) => (

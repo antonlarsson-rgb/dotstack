@@ -10,7 +10,7 @@ export function SlideShell({
   return (
     <section
       id={id}
-      className={`slide flex items-center justify-center px-16 py-24 ${className}`}
+      className={`slide flex items-start md:items-center justify-center pt-16 pb-12 md:py-24 ${className}`}
     >
       <div className="max-w-[1080px] w-full">{children}</div>
     </section>
