@@ -1,13 +1,18 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
-
-function isMobile() {
-  return typeof window !== "undefined" && window.innerWidth < 768;
-}
+import { useEffect, useRef, useCallback, useState } from "react";
 
 export function useHorizontalScroll(onSlideChange: (slide: number) => void) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [mobile, setMobile] = useState(false);
+
+  // Detect mobile once on mount and on resize
+  useEffect(() => {
+    const check = () => setMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const scrollToSlide = useCallback(
     (n: number, smooth = true) => {
@@ -15,12 +20,14 @@ export function useHorizontalScroll(onSlideChange: (slide: number) => void) {
       if (!el) return;
       const clamped = Math.max(1, Math.min(n, 14));
 
-      if (isMobile()) {
-        // Vertical scroll on mobile: find the nth .slide child
+      if (mobile) {
         const slides = el.querySelectorAll(".slide");
-        const target = slides[clamped - 1];
+        const target = slides[clamped - 1] as HTMLElement | undefined;
         if (target) {
-          target.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+          el.scrollTo({
+            top: target.offsetTop,
+            behavior: smooth ? "smooth" : "auto",
+          });
         }
       } else {
         el.scrollTo({
@@ -29,41 +36,48 @@ export function useHorizontalScroll(onSlideChange: (slide: number) => void) {
         });
       }
     },
-    []
+    [mobile]
   );
 
-  // Track current slide from scroll position
+  // Track current slide — throttled
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
 
-    let ticking = false;
+    let timeout: ReturnType<typeof setTimeout> | null = null;
+
     const handleScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        let slide: number;
-        if (isMobile()) {
-          // Vertical: figure out which slide is most visible
-          const slides = el.querySelectorAll(".slide");
-          const scrollTop = el.scrollTop;
-          slide = 1;
-          slides.forEach((s, i) => {
-            const rect = (s as HTMLElement).offsetTop;
-            if (scrollTop >= rect - 200) slide = i + 1;
-          });
-        } else {
-          slide = Math.round(el.scrollLeft / window.innerWidth) + 1;
+      if (timeout) return;
+      timeout = setTimeout(() => {
+        timeout = null;
+        try {
+          let slide: number;
+          if (mobile) {
+            const scrollTop = el.scrollTop;
+            const slides = el.children;
+            slide = 1;
+            for (let i = 0; i < slides.length; i++) {
+              const child = slides[i] as HTMLElement;
+              if (child.classList.contains("slide") && scrollTop >= child.offsetTop - 300) {
+                slide = i + 1;
+              }
+            }
+          } else {
+            slide = Math.round(el.scrollLeft / window.innerWidth) + 1;
+          }
+          onSlideChange(slide);
+        } catch {
+          // ignore scroll tracking errors
         }
-        onSlideChange(slide);
-        history.replaceState(null, "", `#slide-${slide}`);
-        ticking = false;
-      });
+      }, 150);
     };
 
     el.addEventListener("scroll", handleScroll, { passive: true });
-    return () => el.removeEventListener("scroll", handleScroll);
-  }, [onSlideChange]);
+    return () => {
+      el.removeEventListener("scroll", handleScroll);
+      if (timeout) clearTimeout(timeout);
+    };
+  }, [onSlideChange, mobile]);
 
   // Handle initial hash
   useEffect(() => {
@@ -71,19 +85,16 @@ export function useHorizontalScroll(onSlideChange: (slide: number) => void) {
     const match = hash.match(/^#slide-(\d+)$/);
     if (match) {
       const n = parseInt(match[1], 10);
-      scrollToSlide(n, false);
+      setTimeout(() => scrollToSlide(n, false), 100);
     }
   }, [scrollToSlide]);
 
   // Keyboard navigation (desktop only)
   useEffect(() => {
+    if (mobile) return;
+
     const handleKey = (e: KeyboardEvent) => {
-      if (isMobile()) return;
-      if (
-        e.target instanceof HTMLInputElement ||
-        e.target instanceof HTMLTextAreaElement
-      )
-        return;
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
 
       const el = containerRef.current;
       if (!el) return;
@@ -100,7 +111,7 @@ export function useHorizontalScroll(onSlideChange: (slide: number) => void) {
 
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [scrollToSlide]);
+  }, [scrollToSlide, mobile]);
 
   return { containerRef, scrollToSlide };
 }

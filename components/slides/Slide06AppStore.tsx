@@ -68,17 +68,16 @@ export function Slide06AppStore() {
 
         {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5">
-          <AnimatePresence mode="popLayout">
+          <AnimatePresence mode="wait">
             {filtered.map((app) => {
               const installed = installedIds.has(app.id);
               return (
                 <motion.div
                   key={app.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.15 }}
                   className="border border-[var(--border)] rounded-lg p-3.5 bg-white"
                 >
                   <div className="flex items-center gap-2.5 mb-2">
