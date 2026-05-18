@@ -39,32 +39,32 @@ function PitchDeck() {
       <AgentButton />
       <AgentDrawer />
       <div ref={containerRef} className="scroll-container">
-        {/* 1. What is .stack */}
+        {/* 1. What .stack is + selected to Almedalen (build anticipation) */}
         <Slide01Hero />
-        {/* 2. The problem: SaaS sprawl, unused licenses, fear of cancelling */}
+        {/* 2. The problem this kills */}
         <Slide02Observation />
-        {/* 3. Why the timing is right */}
-        <Slide03WhyNow />
-        {/* 4. How .stack works: Stackie model, no fear of missing features */}
+        {/* 3. The product, revealed early */}
+        <Slide05LiveProduct />
+        {/* 4. How .stack works: the model */}
         <Slide04Solution />
-        {/* 5. Who is behind this */}
-        <Slide14Founder />
+        {/* 5. Why the timing is right */}
+        <Slide03WhyNow />
         {/* 6. Technical architecture */}
         <Slide10Architecture />
         {/* 7. The App Store: 42 apps */}
         <Slide06AppStore />
-        {/* 8. Company economics (interactive) */}
+        {/* 8. Who is behind this */}
+        <Slide14Founder />
+        {/* 9. Company economics (interactive) */}
         <Slide08CompanyFinancials />
-        {/* 9. What we have today */}
+        {/* 10. What we have today */}
         <Slide13Traction />
-        {/* 10. 12-month plan */}
+        {/* 11. 12-month plan */}
         <Slide10Roadmap />
-        {/* 11. Ask the AI anything */}
+        {/* 12. Ask the AI anything */}
         <Slide12AskAgent />
-        {/* 12. The investment ask */}
+        {/* 13. The offer: the investment ask */}
         <Slide16Ask />
-        {/* 13. The live product */}
-        <Slide05LiveProduct />
         {/* 14. Contact */}
         <Slide17Contact />
       </div>

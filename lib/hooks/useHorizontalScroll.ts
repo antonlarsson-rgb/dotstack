@@ -39,7 +39,7 @@ export function useHorizontalScroll(onSlideChange: (slide: number) => void) {
     [mobile]
   );
 
-  // Track current slide — throttled
+  // Track current slide (throttled)
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;

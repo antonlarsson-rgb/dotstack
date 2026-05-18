@@ -14,8 +14,8 @@ const milestones = [
   { done: true, text: "Working MVP: CRM, projects, chat, finance, campaigns, AI agent" },
   { done: true, text: "42-app App Store covering 12 SaaS categories" },
   { done: true, text: "Built entirely with AI in weeks, not months" },
-  { done: true, text: "2 test customers committed: Stellar (50p agency) + Swedish retailer (150+ stores)" },
-  { done: false, text: "15 warm leads from Stellar's existing client network" },
+  { done: true, text: "2 design-partner customers committed: a 50-person agency + a 150-store retailer" },
+  { done: false, text: "Targeted pipeline of 15 profile-fit SMBs" },
   { done: false, text: "Technical co-founder candidate in early conversations" },
 ];
 
@@ -44,9 +44,9 @@ export function Slide13Traction() {
           className="mt-6 text-[17px] text-[var(--text-secondary)] leading-[1.55] max-w-[600px]"
           variants={fadeUp}
         >
-          Two test customers are ready to go live. Stellar, where I work, runs
-          100k SEK/month in SaaS. A Swedish retail brand with 150+ stores is
-          customer two. Both are committed at full price from launch.
+          Two customers are ready to go live. A 50-person agency running
+          ~100k SEK/month in SaaS is customer one. A Swedish retail brand with
+          150+ stores is customer two. Both are committed at full price from launch.
         </motion.p>
 
         <motion.div
@@ -74,12 +74,11 @@ export function Slide13Traction() {
           variants={fadeUp}
         >
           <p className="text-[14px] text-[var(--text-secondary)] leading-[1.55]">
-            <span className="font-medium text-[var(--text)]">Why Stackies (humans)?</span>{" "}
-            Because the rest of .stack is as much AI as possible. The platform,
-            the agent, the app generation, all automated. But someone needs to
-            hold the customer&apos;s hand, help them choose the right path, and
-            actively work to lower their costs. That&apos;s the Stackie. One
-            human per ten customers. High touch where it matters, AI everywhere else.
+            <span className="font-medium text-[var(--text)]">Why a human, when everything else is AI?</span>{" "}
+            Trust. Cancelling the software a company runs on is terrifying. The
+            Stackie is the person who owns that decision with the customer and is
+            accountable for the savings. That relationship is why customers stay,
+            and it is the part competitors cannot copy by shipping another model.
           </p>
         </motion.div>
       </motion.div>

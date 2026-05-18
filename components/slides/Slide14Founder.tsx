@@ -16,7 +16,7 @@ const timeline = [
   { year: "2014", title: "First company, age 19", desc: "Sold websites to local businesses in Sundsvall. Learned to sell technical services to non-technical people." },
   { year: "2016", title: "N1CE, Spikeball", desc: "Early part of N1CE (alcohol popsicles). Ran Swedish Spikeball import. Real companies, real revenue." },
   { year: "2019", title: "Construction staffing", desc: "Self-funded staffing platform. Reached 23 MSEK revenue. Went bankrupt 2022. Expensive, formative lesson." },
-  { year: "2023", title: "Stellar, Head of Performance", desc: "Deliberately went agency-side. Stellar grew from 50 toward 100 MSEK. Rebuilt operator muscles." },
+  { year: "2023", title: "Head of Performance, growth agency", desc: "Went operator-side at a Nordic growth agency. Scaled performance teams. Rebuilt the operator muscles this needs." },
   { year: "2026", title: ".stack", desc: "Two years hearing the same problem. Built the product. Two customers committed. Ready for the next step." },
 ];
 
@@ -53,14 +53,15 @@ export function Slide14Founder() {
               Anton Larsson
             </h1>
             <p className="text-[15px] text-[var(--text-tertiary)] mt-1">
-              Head of Performance, Stellar · Sweden
+              Performance &amp; growth operator · Sweden
             </p>
             <p className="text-[15px] text-[var(--text-secondary)] mt-3 leading-[1.55] max-w-[520px]">
               12 years of building companies. Background in B2B customer
               acquisition, performance marketing, sales, and operations.
-              Enough technical understanding to build an MVP with AI tools,
-              enough self-awareness to know I need a technical co-founder
-              for what comes next. I&apos;ve made expensive mistakes and
+              Enough technical understanding to ship the MVP solo, enough
+              self-awareness to hold two co-founder seats open: a technical
+              lead, and a design and product partner who owns the surface
+              customers actually touch. I&apos;ve made expensive mistakes and
               learned from every one.
             </p>
           </div>
@@ -108,21 +109,22 @@ export function Slide14Founder() {
           </div>
         </motion.div>
 
-        {/* Strengths / gaps */}
+        {/* Strengths + founding team */}
         <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6" variants={fadeUp}>
           <div className="border border-[var(--border)] rounded-lg p-4">
             <h3 className="text-[12px] font-medium text-[var(--accent-green)] mb-2">What I bring</h3>
             <ul className="space-y-1 text-[13px] text-[var(--text-secondary)] leading-[1.4]">
               <li>B2B customer acquisition and sales</li>
               <li>Performance marketing and operations</li>
-              <li>Direct daily access to target customers</li>
-              <li>Technical foundation, built this MVP with AI</li>
+              <li>Knows how to find and close SMB buyers</li>
+              <li>Shipped this working MVP solo</li>
             </ul>
           </div>
           <div className="border border-[var(--border)] rounded-lg p-4">
-            <h3 className="text-[12px] font-medium text-[var(--accent-amber)] mb-2">What I need</h3>
+            <h3 className="text-[12px] font-medium text-[var(--accent-amber)] mb-2">Open founding roles</h3>
             <ul className="space-y-1 text-[13px] text-[var(--text-secondary)] leading-[1.4]">
-              <li>Technical co-founder (candidate in discussion)</li>
+              <li>Technical co-founder · in discussion</li>
+              <li>Design &amp; product co-founder · open</li>
               <li>Network in AI infrastructure and SaaS</li>
               <li>Operational support scaling B2B</li>
             </ul>

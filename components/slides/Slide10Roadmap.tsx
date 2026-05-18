@@ -20,19 +20,19 @@ const quarters = [
     summary: "Two customers live. Cancel first subscriptions. Validate the model.",
     months: [
       { month: "Month 1", items: [
-        "Onboard Stellar (customer 1): take over all SaaS subscriptions",
+        "Onboard customer 1 (50-person agency): take over all SaaS subscriptions",
         "Map every tool, user, and contract renewal date",
         "First invoice at net-60 (factored at 1.8%)",
         "Begin subscription audits: identify unused licenses immediately",
       ]},
       { month: "Month 2", items: [
-        "First cancellations: ~20% of Stellar's SaaS spend removed",
+        "First cancellations: ~20% of customer 1's SaaS spend removed",
         "Onboard retail brand (customer 2): same process",
         "Invoice customer 1 at 10% discount (90% of original spend)",
         "Hire technical co-founder from Pinecone network",
       ]},
       { month: "Month 3", items: [
-        "Stellar vendor cost down ~40% from original",
+        "Customer 1 vendor cost down ~40% from original",
         "Build first .stack replacement modules (CRM, project management)",
         "Positive gross margin on customer 1",
         "First Stackie hire starts training",
@@ -49,7 +49,7 @@ const quarters = [
       { month: "Month 4", items: [
         "First Stackie manages both existing customers",
         "Vendor cost at ~30% for early customers",
-        "Begin outreach to 15 warm leads from Stellar network",
+        "Begin targeted outreach to 15 profile-fit SMBs",
         "Be selective: ideal customers are 20-80 employees, 50-150k SEK/mo SaaS spend",
       ]},
       { month: "Month 5", items: [

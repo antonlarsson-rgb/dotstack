@@ -3,7 +3,7 @@ export const pitchData = {
   customers: {
     committed: 2,
     pipeline: 15,
-    customer1: "Stellar (50-person agency, ~100k SEK/mo SaaS)",
+    customer1: "A 50-person agency (~100k SEK/mo SaaS)",
     customer2: "Swedish retail brand with 150+ stores",
   },
   pricing: "Customer pays 90% of original SaaS spend (10% discount). Net-60 first invoice (1.8% factoring fee).",
@@ -30,7 +30,7 @@ export const pitchData = {
   },
   founder: {
     name: "Anton Larsson",
-    role: "Head of Performance at Stellar",
+    role: "Performance & growth operator",
     background: "B2B customer acquisition, performance marketing, operations, sales",
     companies: "Founded companies since age 19",
     biggestVenture: "Construction staffing: 23 MSEK revenue, bankrupt 2022",

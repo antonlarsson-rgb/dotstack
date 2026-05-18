@@ -25,7 +25,7 @@ const jetbrainsMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: ".stack — A single invoice, a single dashboard, one AI.",
+  title: ".stack: a single invoice, a single dashboard, one AI.",
   description:
     "Replace your entire SaaS stack with one invoice, one dashboard, and an AI that works across every tool.",
 };

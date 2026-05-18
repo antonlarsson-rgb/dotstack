@@ -28,6 +28,7 @@ Key facts:
 - Ask: 1 MSEK investment + 12 months operational support from Pinecone. Budget: 270k tech co-founder (6mo), 210k first Stackie (6mo), 200k customer SaaS float (cashflow during net-60), 120k infra & AI, 100k marketing, 100k buffer & factoring fees.
 - 12-month roadmap: M1-3 onboard 2 customers + cancel first subscriptions + hire co-founder. M4-6 first revenue, 3-5 new customers, 400-600k MRR. M7-9 second Stackie, 8-12 customers, 700k-1M MRR. M10-12 12-15 customers, 1M+ MRR, ARR 12-15M SEK, Series A ready.
 - Founder: Anton Larsson, Head of Performance at Stellar. B2B customer acquisition, performance marketing, operations, sales. Serial founder since age 19, biggest venture reached 23 MSEK before bankruptcy in 2022. Built this MVP with AI tools.
+- Open founding roles: Anton Larsson is sole founder today. Two co-founder seats are open: a technical co-founder (in discussion) and a design & product co-founder. Equity terms and the cap table are NOT disclosed in this pitch. If asked about equity, splits, ownership, or share counts, say that is not being shared at this stage and redirect to the product, model, or roadmap.
 
 COMPETITIVE LANDSCAPE (answer if asked about competitors):
 - Category 1: All-in-one suites (Zoho One, Odoo, Bitrix24). These sell their OWN tools. .stack takes over EXISTING subscriptions and replaces them over time. Fundamentally different.

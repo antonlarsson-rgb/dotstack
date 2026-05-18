@@ -22,15 +22,17 @@ export function Slide05LiveProduct() {
         <motion.div className="text-center mb-6" variants={fadeUp}>
           <span className="font-serif text-[14px] text-[var(--text-tertiary)] italic block mb-2">The product</span>
           <h1 className="font-sans text-[36px] font-medium tracking-[-0.025em] text-[var(--text)] leading-[1.1]">
-            A working MVP. Not a mockup.
+            This is .stack. Running live.
           </h1>
-          <p className="text-[16px] text-[var(--text-secondary)] mt-3 max-w-[500px] mx-auto leading-[1.5]">
-            CRM, projects, chat, finance, campaigns, timeline, AI agent,
-            and a 42-app store. Built with AI. Running live.
+          <p className="text-[16px] text-[var(--text-secondary)] mt-3 max-w-[540px] mx-auto leading-[1.5]">
+            One workspace that replaces a company&apos;s SaaS: CRM, projects,
+            chat, finance, campaigns, timeline, an AI agent across all of it,
+            and a 42-app store. The product selected for the Pinecone Ventures
+            Buildathon at Almedalen 2026. Click straight into it below.
           </p>
         </motion.div>
 
-        {/* Browser chrome with scaled iframe — hidden on mobile */}
+        {/* Browser chrome with scaled iframe (hidden on mobile) */}
         <motion.div
           className="hidden md:block w-full border border-[var(--border)] rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.08)]"
           variants={fadeUp}

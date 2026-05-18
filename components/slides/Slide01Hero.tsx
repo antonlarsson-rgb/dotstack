@@ -23,12 +23,12 @@ export function Slide01Hero() {
         variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
       >
         <motion.div className="flex items-center gap-2 md:gap-3 mb-6 md:mb-8" variants={fadeUp}>
-          <span className="text-[10px] md:text-[12px] font-mono tracking-[0.08em] text-[var(--text-muted)] uppercase">
-            Pinecone Ventures Buildathon
+          <span className="text-[10px] md:text-[12px] font-medium tracking-[0.08em] text-[var(--accent-blue)] uppercase">
+            Selected · Pinecone Ventures Buildathon
           </span>
           <span className="text-[var(--text-muted)]">/</span>
-          <span className="text-[10px] md:text-[12px] font-medium tracking-[0.08em] text-[var(--accent-blue)] uppercase">
-            AI Infrastructure
+          <span className="text-[10px] md:text-[12px] font-mono tracking-[0.08em] text-[var(--text-muted)] uppercase">
+            AI Infrastructure · Almedalen 2026
           </span>
         </motion.div>
 
@@ -54,6 +54,14 @@ export function Slide01Hero() {
         >
           One invoice. One dashboard. One AI agent that works across
           every tool. 10% cheaper from day one, half the cost within a year.
+        </motion.p>
+
+        <motion.p
+          className="text-[14px] md:text-[16px] text-[var(--text-tertiary)] leading-[1.4] mt-7 md:mt-9 max-w-[560px]"
+          variants={fadeUp}
+        >
+          It is built. It is live. The full product is the next thing
+          you will see, then how it works and what it costs.
         </motion.p>
 
         <motion.p className="font-mono text-[12px] md:text-[13px] text-[var(--text-muted)] mt-10 md:mt-14" variants={fadeUp}>
